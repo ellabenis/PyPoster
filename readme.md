@@ -35,6 +35,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 sudo apt install docker-compose
 
+sudo usermod -aG docker $USER
+
 
 3. Verify that Docker is installed correctly by running the following command:
 

@@ -3,33 +3,26 @@
 This is a project that allows you to retrieve information about movies from an external API and store them in a MongoDB database.
 
 ## Getting Started
-
+### virtual environment
 To get started, clone this repository and navigate to the root directory. Then, create a virtual environment and activate it:
 
 python -m venv env
 source env/bin/activate
 
-
+### Install Required Dependencies
 Install the required dependencies by running:
 
 pip install -r app/requirements.txt
 
+### Edit config files
+Edit the files:
+docker-compose-config.py
+app/app-config.py
+db/db-config.py
 
-Next, create a `config.py` file in the `app/` directory with the following content:
+To add your passwords and api key.
 
-API_KEY = 'your_api_key_here'
-
-
-Replace `your_api_key_here` with your actual API key.
-
-Create a `db-config.py` file in the `db/` directory with the following content:
-
-DB_HOST = 'mongodb://mongo:27017/'
-DB_NAME = 'my-mongo-db'
-DB_USERNAME = 'admin'
-DB_PASSWORD = 'admin'
-
-
+## Start the application
 To start the application, run the following command from the root directory:
 
 docker-compose up

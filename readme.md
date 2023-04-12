@@ -54,22 +54,27 @@ git clone https://github.com/YOUR_USERNAME/PyPoster.git`
 
 API_KEY = 'MY TMDB API KEY'
 
+5. Change the Database username and password in db/init-mongo.js
+
+  user: "admin",
+  pwd: "admin",
+
 6. Build the app Docker image: 
 
 cd app
 sudo docker build -t py-poster-app .
 
-5. Build the db Docker image: 
+7. Build the db Docker image: 
 
 cd db
 sudo docker build -t py-poster-db .
 
 
-6. Run the Docker containers: 
+8. Run the Docker containers: 
 
 docker-compose up
 
-7. Open your web browser and go to `http://YOUR_EC2_INSTANCE_PUBLIC_IP_ADDRESS:5000` to access the PyPoster app.
+9. Open your web browser and go to `http://YOUR_EC2_INSTANCE_PUBLIC_IP_ADDRESS:5000` to access the PyPoster app.
 
 ## Built With
 

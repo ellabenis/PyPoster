@@ -42,15 +42,26 @@ sudo docker --version
 
 To set up the PyPoster app, follow the steps below:
 
-1. Clone the PyPoster repository: `git clone https://github.com/YOUR_USERNAME/PyPoster.git`
+1. Clone the PyPoster repository: 
 
-2. Navigate to the project directory: `cd PyPoster`
+git clone https://github.com/YOUR_USERNAME/PyPoster.git`
 
-3. Build the Docker image: `sudo docker build -t pyposter .`
+3. Navigate to the project directory: `cd PyPoster`
 
-4. Run the Docker container: `sudo docker run -e API_KEY=<YOUR_TMDB_API_KEY> -p 5000:5000 pyposter`
+4. Build the app Docker image: 
 
-5. Open your web browser and go to `http://YOUR_EC2_INSTANCE_PUBLIC_IP_ADDRESS:5000` to access the PyPoster app.
+cd app
+sudo docker build -t py-poster-app .
+
+5. Build the db Docker image: 
+
+cd db
+sudo docker build -t py-poster-db .
+
+
+6. Run the Docker container: `sudo docker run -e API_KEY=<YOUR_TMDB_API_KEY> -p 5000:5000 pyposter`
+
+7. Open your web browser and go to `http://YOUR_EC2_INSTANCE_PUBLIC_IP_ADDRESS:5000` to access the PyPoster app.
 
 ## Built With
 

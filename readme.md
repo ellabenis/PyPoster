@@ -21,15 +21,22 @@ If you don't already have Docker installed, you can install it by following the 
 
 1. Update the package index on your EC2 instance: `sudo apt-get update`
 
-2. Install the latest version of Docker: 
+2. Install the latest version of Docker:
+
 sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
 sudo apt-get update
+
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 
-3. Verify that Docker is installed correctly by running the following command: `sudo docker run hello-world`
+3. Verify that Docker is installed correctly by running the following command:
+
+sudo docker --version
 
 ### Setting up the PyPoster app
 

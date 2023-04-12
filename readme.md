@@ -48,7 +48,11 @@ git clone https://github.com/YOUR_USERNAME/PyPoster.git`
 
 3. Navigate to the project directory: `cd PyPoster`
 
-4. Build the app Docker image: 
+4. Change the TMDB aPI Key in app/app-config.py 
+
+API_KEY = 'MY TMDB API KEY'
+
+6. Build the app Docker image: 
 
 cd app
 sudo docker build -t py-poster-app .
@@ -59,7 +63,9 @@ cd db
 sudo docker build -t py-poster-db .
 
 
-6. Run the Docker container: `sudo docker run -e API_KEY=<YOUR_TMDB_API_KEY> -p 5000:5000 pyposter`
+6. Run the Docker containers: 
+
+docker-compose up
 
 7. Open your web browser and go to `http://YOUR_EC2_INSTANCE_PUBLIC_IP_ADDRESS:5000` to access the PyPoster app.
 

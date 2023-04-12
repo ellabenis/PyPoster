@@ -56,3 +56,9 @@ This project includes Docker containers for both the application and the databas
 docker-compose build
 docker-compose up
 
+# New Instance
+sudo apt-get update
+sudo apt-get install git
+https://github.com/michaelbenis/MoviesPosters.git -b michael
+cd MoviesPosters
+pip install Flask

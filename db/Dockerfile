@@ -4,4 +4,4 @@ ENV MONGO_INITDB_ROOT_USERNAME=admin
 ENV MONGO_INITDB_ROOT_PASSWORD=admin
 ENV MONGO_INITDB_DATABASE=pyposterdb
 
-COPY init-mongo.js /docker-entrypoint-initdb.d/
+COPY /docker-entrypoint-initdb.d/init-mongo.js /docker-entrypoint-initdb.d/

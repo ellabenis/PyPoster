@@ -62,11 +62,13 @@ API_KEY = 'MY TMDB API KEY'
 6. Build the app Docker image: 
 
 cd app
+
 sudo docker build -t pyposterapp .
 
 7. Build the db Docker image: 
 
 cd db
+
 sudo docker build -t pyposterdb .
 
 

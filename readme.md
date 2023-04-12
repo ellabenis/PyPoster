@@ -1,59 +1,52 @@
-# Movie API Project
+# PyPoster
 
-This is a project that allows you to retrieve information about movies from an external API and store them in a MongoDB database.
+PyPoster is a Python web application that allows users to search for movies and create posters for their favorite movies.
 
 ## Getting Started
-### virtual environment
-To get started, clone this repository and navigate to the root directory. Then, create a virtual environment and activate it:
 
-python -m venv env
-source env/bin/activate
+These instructions will help you get a copy of the PyPoster project up and running on your local machine or on an EC2 instance.
 
-### Install Required Dependencies
-Install the required dependencies by running:
+### Prerequisites
 
-pip install -r app/requirements.txt
+Before you start, make sure you have the following installed on your machine:
 
-### Edit config files
-Edit the files:
-docker-compose-config.py
-app/app-config.py
-db/db-config.py
+- Git
+- Docker
 
-To add your passwords and api key.
+If you are using an EC2 instance, make sure it has at least 1GB of RAM.
 
-## Start the application
-To start the application, run the following command from the root directory:
+### Installing Docker
 
-docker-compose up
+If you don't already have Docker installed, you can install it by following the steps below:
 
+1. Update the package index on your EC2 instance: `sudo apt-get update`
 
-## API Endpoints
-
-### GET /movies
-
-Retrieves a list of movies from the external API and returns them as JSON.
-
-### GET /movies/{id}
-
-Retrieves a single movie by its ID from the database and returns it as JSON.
-
-### POST /movies
-
-Adds a new movie to the database. The movie data should be sent in the request body as JSON.
-
-## Docker
-
-This project includes Docker containers for both the application and the database. To build and run the containers, use the following commands:
-
-docker-compose build
-docker-compose up
-
-# New Instance
+2. Install the latest version of Docker: 
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
-sudo apt-get install git
-https://github.com/michaelbenis/PyPoster
-cd PyPoster
-pip install Flask
+sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-docker run -e API_KEY=<YOUR_TMDB_API_KEY> -p 5000:5000 pyposter
+
+3. Verify that Docker is installed correctly by running the following command: `sudo docker run hello-world`
+
+### Setting up the PyPoster app
+
+To set up the PyPoster app, follow the steps below:
+
+1. Clone the PyPoster repository: `git clone https://github.com/YOUR_USERNAME/PyPoster.git`
+
+2. Navigate to the project directory: `cd PyPoster`
+
+3. Build the Docker image: `sudo docker build -t pyposter .`
+
+4. Run the Docker container: `sudo docker run -e API_KEY=<YOUR_TMDB_API_KEY> -p 5000:5000 pyposter`
+
+5. Open your web browser and go to `http://YOUR_EC2_INSTANCE_PUBLIC_IP_ADDRESS:5000` to access the PyPoster app.
+
+## Built With
+
+- Flask - A micro web framework written in Python
+- MongoDB - A document-based, distributed database system
+- Docker - A containerization platform

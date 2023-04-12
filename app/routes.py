@@ -1,4 +1,4 @@
-from flask import jsonify
+from flask import render_template
 from pymongo import MongoClient
 from app import app
 
@@ -18,8 +18,4 @@ def index():
     for movie in movies:
         movie['_id'] = str(movie['_id'])
         response.append(movie)
-    return jsonify(response)
-
-
-if __name__ == '__main__':
-    app.run()
+    return render_template('index.html', movies=response)

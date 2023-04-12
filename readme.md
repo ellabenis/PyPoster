@@ -52,6 +52,8 @@ docker-compose up
 # New Instance
 sudo apt-get update
 sudo apt-get install git
-https://github.com/michaelbenis/MoviesPosters.git -b michael
-cd MoviesPosters
+https://github.com/michaelbenis/PyPoster
+cd PyPoster
 pip install Flask
+
+docker run -e API_KEY=<YOUR_TMDB_API_KEY> -p 5000:5000 pyposter

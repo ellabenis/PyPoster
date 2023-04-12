@@ -46,7 +46,7 @@ To set up the PyPoster app, follow the steps below:
 
 1. Clone the PyPoster repository: 
 
-git clone https://github.com/YOUR_USERNAME/PyPoster.git`
+git clone https://github.com/YOUR_USERNAME/PyPoster.git
 
 3. Navigate to the project directory: `cd PyPoster`
 
@@ -62,12 +62,12 @@ API_KEY = 'MY TMDB API KEY'
 6. Build the app Docker image: 
 
 cd app
-sudo docker build -t py-poster-app .
+sudo docker build -t pyposterapp .
 
 7. Build the db Docker image: 
 
 cd db
-sudo docker build -t py-poster-db .
+sudo docker build -t pyposterdb .
 
 
 8. Run the Docker containers: 
